@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Tells browser what character set we want. Default does not include SK characters -->
+<meta charset="utf-8">
+<!-- Sets scale and width so our website displays properly on all devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="all">
+<meta name="description" content="GALILEO SCHOOL">
+<!-- Tab displays the custom text below instead of the file name -->
+<title>GALILEO SCHOOL- súkromná anglická škola</title>
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="copyright" content="© 2021, GALILEO SCHOOL, s.r.o.">
+<!-- Style -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="../../../css/style.css">
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../../../js/navigation.js"></script>
+<script src="../../../js/searcher.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1H4RVL2L4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q1H4RVL2L4');
+</script>
+<!-- end of Global site tag (gtag.js) - Google Analytics -->
+
+    <style>
+    .header > img {
+        display: none;
+    }
+
+    .no-display {
+        display: none;
+        transition: .75s ease;
+    }
+
+    .no-overflow {
+        overflow: hidden;
+    }
+
+    @media screen and (min-width: 670px){
+
+        .header > img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+    }    
+</style>
+    <script src="../../../js/interview.js"></script>
+</head>
+<body>
+    <div id="modal-background" class="no-display"></div>
+    <header class="flex column">
+        <!-- Header -->
+<!-- The header usually contains the logo and a navigation bar -->
+<!-- Navigation bar -->
+<nav>
+    <!-- Navigation for smaller devices -->
+    <div id="nav-bar" class="nav-phone">
+        <!-- Items which should be on the left -->
+        <div class="left">
+            <!-- Search button -->
+            <div class="search-container close">
+                <input type="search" name="searchInp" id="search_box" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)"/>
+                <script>
+                    document.getElementById('search_box').addEventListener('keypress', (e) =>{
+                        if(e.keyCode === 13 && e.target.value.length > 2)
+                            sendSearch(e.target.value, 'search.html');
+                    });
+                </script>
+            </div>
+            <div id="search" class="nav-phone search">
+                <img id="search-img" src="../../../images/icons/search.png">
+            </div>
+            <div class="nav-container-desktop">
+                <a href="https://galileoschool.edupage.org/znamky/">Edupage</a>
+            </div>
+            <!-- School logo -->
+            <div id="logo-container" class="nav-phone school-logo-container">
+                <li class="nav-phone logo">
+                    <img id="logo" src="../../../images/logo.jpg">
+                </li>
+                <li class="nav-phone title">
+                    <div id="title">Galileo School</div>
+                </li>
+            </div>
+        </div>
+        <!-- Items which should be on the right -->
+        <div class="right">
+
+            <!-- Language selection dropdown -->
+<div id="langBtn" onclick="location.href='../../en/interviews/index.html'" class="nav-phone lang darker-gray">
+    <div class="lang-text">EN</div>
+</div>
+
+            <!-- Button for opening navigation bar dropdown -->
+            <div id="nav-btn" class="nav-phone toggle square">
+                <img id="menu-img" src="../../../images/icons/menu.png">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Search result display box -->
+<div id="search_results" class="search-result"></div>
+
+<!-- The actual navigation menu -->
+<div id="nav-desk" class="nav-desk">
+    <!-- We prefer ul (unordered list) for the menu structure and flexibility -->
+    <ul id="main-nav" class="navbar">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='../../sk/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Hlavná Stránka</div>
+</li>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">O Škole</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li id="kindergarten" onclick="location.href='../../sk/school/kindergarten/index.html'">Škôlka</li>
+            <li id="primaryschool" onclick="location.href='../../sk/school/primarySchool/index.html'">Základná Škola</li>
+            <li id="highschool" onclick="location.href='../../sk/school/highSchool/index.html'">Gymnázium</li>
+        </ul>
+    </div>
+</li>
+<li onclick="location.href='../../sk/school/summer/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Letná Škola</div>
+</li>
+<li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
+    <div class="nav-elem-text">Žiacka Knižka</div>
+</li>
+<li onclick="location.href='../../sk/interviews/index.html'" class="nav-elem">
+    <div>Absolventi</div>
+</li>
+<li onclick="location.href='../../sk/admissions/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Prijímacie Pohovory</div>
+</li>
+<li onclick="location.href='../../sk/contactus/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Kontakty</div>
+</li>
+    </ul>
+
+    <ul id="sub-nav" class="navbar">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='https://www.eteach.com/careers/galileoschool'" class="nav-elem">
+    <div>Pracuj pre nás</div>
+</li>
+<li onclick="location.href='../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
+<li onclick="location.href='https://www.microsoft.com/sk-sk/microsoft-teams/log-in'" class="nav-elem">
+    <div>Dištančné Vzdelávanie</div>
+</li>
+    </ul>
+</div>
+
+<div id="nav-phone" class="phone-menu">
+    <ul id="nav-phone-list" class="phone-nav">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='../../sk/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Hlavná Stránka</div>
+</li>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">O Škole</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li id="kindergarten" onclick="location.href='../../sk/school/kindergarten/index.html'">Škôlka</li>
+            <li id="primaryschool" onclick="location.href='../../sk/school/primarySchool/index.html'">Základná Škola</li>
+            <li id="highschool" onclick="location.href='../../sk/school/highSchool/index.html'">Gymnázium</li>
+        </ul>
+    </div>
+</li>
+<li onclick="location.href='../../sk/school/summer/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Letná Škola</div>
+</li>
+<li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
+    <div class="nav-elem-text">Žiacka Knižka</div>
+</li>
+<li onclick="location.href='../../sk/interviews/index.html'" class="nav-elem">
+    <div>Absolventi</div>
+</li>
+<li onclick="location.href='../../sk/admissions/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Prijímacie Pohovory</div>
+</li>
+<li onclick="location.href='../../sk/contactus/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Kontakty</div>
+</li>
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='https://www.eteach.com/careers/galileoschool'" class="nav-elem">
+    <div>Pracuj pre nás</div>
+</li>
+<li onclick="location.href='../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
+<li onclick="location.href='https://www.microsoft.com/sk-sk/microsoft-teams/log-in'" class="nav-elem">
+    <div>Dištančné Vzdelávanie</div>
+</li>
+    </ul>
+</div>
+        <div id="header-img" class="header"><img src="../../../images/interviews/header.jpg" alt="Welcome To Interviews With Past Students"></div>
+    </header>
+
+    <nav id="modal-navigation" class="flex vertical fixed no-display">
+        <ul>
+            <li id="Tomáš_Halgaš_menu" class="nav-elem"><div>Tomáš Halgaš</div></li>
+<li id="Jakub_Ribanský_menu" class="nav-elem"><div>Jakub Ribanský</div></li>
+<li id="Lukáš_Halgaš_menu" class="nav-elem"><div>Lukáš Halgaš</div></li>
+<li id="Filip_Orth_menu" class="nav-elem"><div>Filip Orth</div></li>
+<li id="Alexandra_Martináková_menu" class="nav-elem"><div>Alexandra Martináková</div></li>
+<li id="Samuel_Ribanský_menu" class="nav-elem"><div>Samuel Ribanský</div></li>
+
+        </ul>
+    </nav>
+
+    <div id="modal-close" class="no-display fixed top">
+        <img src="../../../images/icons/close.png" alt="">
+    </div>
+
+    <div class="content interview">
+        <div id="interviews-heading">Absolventi ktorí vo svojom štúdiu pokračovali na najpreztížnejších univerzitách sveta</div>
+        <div class="card-deck interview">
+		<div id="Tomáš_Halgaš" class="card interview">
+			<img class="card-img-top" src="../../../images/interviews/tomas.jpg" alt="Photo">
+			<h4 class="card-title">University of Oxford</h4>
+			<div class="card-body">
+				<h5 class="card-subtitle">Tomáš Halgaš</h5>
+				<p class="card-text">Graduated in 2010/2011<br>Forbes 30 Under 30 issued by Forbes Slovakia in April 2022, Master of Mathematics and Computer Science at the University of Oxford</p>
+				<div class="card-text">
+					<div class="card-text card-long-desc no-display">
+					<p class="card-text card-long-desc no-display">Tomáš sa narodil v Bratislave. Absolvoval bilingválne gymnázium Galileo School. V roku 2011 odišiel do Veľkej Británie študovať na University of Oxford, kde získal bakalársky a neskôr magisterský titul v odboroch matematika a informatika (Computer Science).</p><p class="card-text card-long-desc no-display"> Po ukončení štúdia pracoval krátky čas ako inžinier v spoločnosti Facebook. V tom čase začal s Nickom D'Aloisiom, s ktorým sa spoznal počas štúdia na Oxforde, diskutovať o riešení, z ktorého neskôr vznikol projekt Sphere. Koncom roka 2015 spolu založili spoločnosť Sphere Knowledge Limited s Nickom D'Aloisiom ako CEO a Tomášom Halgašom ako CTO. Projekt s tímom 30+ ľudí financovali slávni investori ako Index Ventures, Horizons Ventures, Mike Moritz (jeden z prvých investorov do Google), Brian Chesky (zakladateľ Airbnb) a Sean Rad (zakladateľ Tinderu).</p><p class="card-text card-long-desc no-display">Projekt Sphere odkúpila v roku 2021 jedna z najväčších sociálnych sietí na svete, spoločnosť Twitter.</p>
+					</div>
+				</div>
+				
+				<ul class="card-images no-display">
+					
+				</ul>
+			</div>
+		</div>
+		<div id="Jakub_Ribanský" class="card interview">
+			<img class="card-img-top" src="../../../images/interviews/jakub_rybansky_rgb.jpg" alt="Photo">
+			<h4 class="card-title">University College London</h4>
+			<div class="card-body">
+				<h5 class="card-subtitle">Jakub Ribanský</h5>
+				<p class="card-text">Graduated in 2015/2016<br>Specialized in Spanish and Russian language at University College London, UK</p>
+				<div class="card-text">
+					<div class="card-text card-long-desc no-display">
+					<p class="card-text card-long-desc no-display">Ako GALILEO SCHOOL zmenilo môj život: GALILEO SCHOOL mi pripravilo výborné jazykové zázemie pre štúdium v zahraničí a taktiež pripravilo na výzvy univerzitného života.</p><p class="card-text card-long-desc no-display">Ako ma štúdium na GALILEO SCHOOL pripravilo na univerzitu: Vďaka štúdiu na GALILEO SCHOOL som získal výborný rozhľad pred vstupom do univerzitného života, a vďaka výbornému feedbacku v škole som vedel čo ma čaká, napríklad pri písaní akademických prác.</p>
+					</div>
+				</div>
+				
+				<ul class="card-images no-display">
+					
+				</ul>
+			</div>
+		</div>
+		<div id="Lukáš_Halgaš" class="card interview">
+			<img class="card-img-top" src="../../../images/interviews/Luki_rgb.jpg" alt="Photo">
+			<h4 class="card-title">University of Oxford</h4>
+			<div class="card-body">
+				<h5 class="card-subtitle">Lukáš Halgaš</h5>
+				<p class="card-text">Graduated in 2014<br>Studied Mathematics and Computer Science (Masters), Computer Science - Security (DPhil) at St Anne’s College (Masters), Linacre College (DPhil), University of Oxford, UK</p>
+				<div class="card-text">
+					<div class="card-text card-long-desc no-display">
+					<p class="card-text card-long-desc no-display">How has GALILEO SCHOOL changed my life? How did GALILEO SCHOOL prepare me for college? During my first lecture on Mathematical Analysis, Professor Priestley famously presented the imagery of her course equipping my peers and me with tools to build our Skyscraper of Mathematics. By the end of the first lecture on the Axioms of Algebra, our tools equated to a stone and a nail. After eight weeks of Analysis, Professor Priestley, resembling a Perwool commercial, drew a hammer and a chisel from her purse to introduce us to our prevailing tools. Building the Skyscraper of Mathematics is hard work I would have long given up on, was my perseverance not nurtured throughout GALILEO SCHOOL by the gradual workload exquisitely composed by my favourite team of teachers. During classes and tutorials with Mr Bezak, we constructed the base for higher floors so well engineered, that Rainier Tower could outgrow Burj Khalifa on top of it.</p><p class="card-text card-long-desc no-display">It was at GALILEO SCHOOL that I discovered the big project I set to develop and acquired the ability to carry on despite the possible unattainability of its completion.</p><p class="card-text card-long-desc no-display">Without GALILEO SCHOOL, I might not have had the skills for the real world, but I was directed straight to obtain them, with optimism.</p><p class="card-text card-long-desc no-display">I am most thankful for the emphasis of GALILEO SCHOOL on developing communication skills. To all the prospective mathematicians-invariants: the presentations, countless essays and ‘journal entries’ do matter. Success requires resilience and hard work. Focus on the them, the environment of GALILEO SCHOOL is excellent for their development and recognition.</p>
+					</div>
+				</div>
+				
+				<ul class="card-images no-display">
+					
+				</ul>
+			</div>
+		</div></div><div class="card-deck interview">
+		<div id="Filip_Orth" class="card interview">
+			<img class="card-img-top" src="../../../images/interviews/orth_rgb.jpg" alt="Photo">
+			<h4 class="card-title">Santa Clara University</h4>
+			<div class="card-body">
+				<h5 class="card-subtitle">Filip Orth</h5>
+				<p class="card-text">Graduated in 2016/2017<br>Studied Business and Entrepreneur Major at Santa Clara University, California, U.S.A.</p>
+				<div class="card-text">
+					<div class="card-text card-long-desc no-display">
+					<p class="card-text card-long-desc no-display">Ako GALILEO SCHOOL zmenilo tvoj život? GALILEO SCHOOL has changed my life in motivating me to gain the best version of myself as well as creating an environment which drove my educational ambitions. Galileo was one of the external forces which influenced me in stepping out of my comfort zone and being able to present myself as an individual.</p><p class="card-text card-long-desc no-display">Ako štúdium na GALILEO SCHOOL pripravilo na univerzitu? I feel GALILEO SCHOOL has prepared me for university by creating and enforcing the solid pillars of my foundations in education to succeed further as I enter university. This school also taught me a lot of principles and values, that now I am able to apply at university as well as in my life.</p><p class="card-text card-long-desc no-display">Odkaz terajším a budúcim študentom GALILEO SCHOOL? Simply engage yourself, explore, be active, and be creative. Drive your intellectual curiosity! Filip Orth</p>
+					</div>
+				</div>
+				
+				<ul class="card-images no-display">
+					
+				</ul>
+			</div>
+		</div>
+		<div id="Alexandra_Martináková" class="card interview">
+			<img class="card-img-top" src="../../../images/interviews/martinakova.jpg" alt="Photo">
+			<h4 class="card-title">Quinnipiac University</h4>
+			<div class="card-body">
+				<h5 class="card-subtitle">Alexandra Martináková</h5>
+				<p class="card-text">Graduated in 2021/2022<br>Literature and Journalism majors and a Psychology minor at Quinnipiac University in Connecticut, U.S.A.</p>
+				<div class="card-text">
+					<div class="card-text card-long-desc no-display">
+					<p class="card-text card-long-desc no-display">Career paths can be a tough part of life. People of all ages dwell on it for a while. Whether it be the dream to be an astronaut as a child, or to get employed at a prestigious firm. Is there a point in your life when you discover what you want to be in the future? We asked this question to our former student Alexandra Martináková, a successful journalist with a Literature and Journalism majors and a Psychology minor. “I had no idea what I wanted to do for such a long time. Sometimes, I still don't know. And I kind of like it that way.” She describes her unpredictable career trajectory with a sense of adventure. Alexandra studies at Quinnipiac University in Connecticut, which is quite the distance. She has quite the story to tell how she got there: “It's kind of a funny story as to how I found this university. I remember sitting in a class, at one of our Gym 5 seminars, next to a girl from another class. She was looking at universities in the US as well, and I remember looking over and seeing the name 'Quinnipiac' and thinking it was so funny to name a university like that. So, I looked more into it and realised the university had the program I was looking for and it was in a great location! So, I applied and was fortunate enough to get a scholarship. Now, here I am!” Galileo School Gymnasium helped her gain many new field experiences. Alexandra dreaded speaking in front of crowds and making presentations but “doing it now is extremely easy thanks to it.” But changing your life to a different course can be challenging and often, people are presented with multiple setbacks. Because Alexandra visited the US before, she had an idea of what she was getting into, but moving there overnight was not easy. “Even now, a year and a half later, I still experience culture shocks,” she said. It can be hard, but definitely exciting. There is a sense of independence when an individual reaches adulthood and travels the world. Going to campus is not hard for Alexandra, as she lives two minutes away and works on campus, which is a favorable advantage. A key aspect of career choices is inspiration. What was Alexandra inspired by? She got to fulfill her childhood dream as she always loved to write. She was originally attending college to get an English major, but an opportunity to write for the Quinnipiac Chronicle popped up. She took the opportunity and instantly fell in love with writing again. She turned her life around and changed her program to a double Journalism major in that first semester! Alexandra Martinákova enjoys what she does with passion and follows paths which feel right to her. “Reporting connects you with so many people and you get the opportunity to tell their stories, and truly, as cheesy as it sounds, it's really rewarding to me,” she said</p>
+					</div>
+				</div>
+				
+				<ul class="card-images no-display">
+					
+				</ul>
+			</div>
+		</div>
+		<div id="Samuel_Ribanský" class="card interview">
+			<img class="card-img-top" src="../../../images/interviews/samo_rybansky_rgb.jpg" alt="Photo">
+			<h4 class="card-title">The University of Sheffield</h4>
+			<div class="card-body">
+				<h5 class="card-subtitle">Samuel Ribanský</h5>
+				<p class="card-text">Graduated in 2013/2014<br>Studied Politics and Philosophy at The University of Sheffield, UK</p>
+				<div class="card-text">
+					<div class="card-text card-long-desc no-display">
+					<p class="card-text card-long-desc no-display">Ako GALILEO SCHOOL zmenilo tvoj život:Galileo School mi ukázalo, že akýmkoľvek smerom sa vyberiem, vždy sa dá uspiet - avšak tento úspech nikdy nepríde sám a musí byť sprevádzaný neustálym úsilím a prácou. A že nad nikým netreba lámat palicu!</p><p class="card-text card-long-desc no-display">Ako štúdium na GALILEO SCHOOL pripravilo na univerzitu: Dvojako: Najprv, GS ponúka užasnú možnosť svojim študentom sa zúčastniť na výletoch na rôzne univerzity, ako aj čerpat informácie zo svojej siete absolventov - GS mi teda vedelo odporučiť tú správnu Univerzity a zároveń mi povedať, čo od nej môžem očakávať. Po druhé, učitelia na GS oboznámení s medzinárodnými akademickými štandardmi mi pomohli pripraviť sa na akademický prístup k vzdelaniu špecificky krajine v ktorej som sa rozhodol študovať</p><p class="card-text card-long-desc no-display">Odkaz terajším a budúcim študentom GALILEO SCHOOL: Veľa čítajte. Čítajte všetko čo vám príde pod ruku, lebo len tak si dokážete utvoriť rozumný obraz o svete a zistiť kde je vaše miesto. A cieľavedomo pracujte na dosiahnutí čohokoľvek čo si zaumienite - v zahraničí sa ‘čo viete’ cení oveľa viac ako ‘koho poznáte’.</p>
+					</div>
+				</div>
+				
+				<ul class="card-images no-display">
+					
+				</ul>
+			</div>
+		</div></div>
+    </div>
+
+    <div id="modal-box" class="card interview no-display"></div>
+
+</body>
+</html>

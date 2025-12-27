@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!-- This indention is totally legal and we are 100% certain about this -->
+<html lang="en">
+    
+<head>
+    <!-- Tells browser what character set we want. Default does not include SK characters -->
+<meta charset="utf-8">
+<!-- Sets scale and width so our website displays properly on all devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="all">
+<meta name="description" content="GALILEO SCHOOL">
+<!-- Tab displays the custom text below instead of the file name -->
+<title>GALILEO SCHOOL- súkromná anglická škola</title>
+<link rel="shortcut icon" href="../../../../favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="../../../../favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="copyright" content="© 2021, GALILEO SCHOOL, s.r.o.">
+<!-- Style -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="../../../../css/style.css">
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../../../../js/navigation.js"></script>
+<script src="../../../../js/searcher.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1H4RVL2L4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q1H4RVL2L4');
+</script>
+<!-- end of Global site tag (gtag.js) - Google Analytics -->
+
+</head>
+
+<body>
+    <!-- Header -->
+<!-- The header usually contains the logo and a navigation bar -->
+<!-- Navigation bar -->
+<nav>
+    <!-- Navigation for smaller devices -->
+    <div id="nav-bar" class="nav-phone">
+        <!-- Items which should be on the left -->
+        <div class="left">
+            <!-- Search button -->
+            <div class="search-container close">
+                <input type="search" name="searchInp" id="search_box" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)"/>
+                <script>
+                    document.getElementById('search_box').addEventListener('keypress', (e) =>{
+                        if(e.keyCode === 13 && e.target.value.length > 2)
+                            sendSearch(e.target.value, 'search.html');
+                    });
+                </script>
+            </div>
+            <div id="search" class="nav-phone search">
+                <img id="search-img" src="../../../../images/icons/search.png">
+            </div>
+            <div class="nav-container-desktop">
+                <a href="https://galileoschool.edupage.org/znamky/">Edupage</a>
+            </div>
+            <!-- School logo -->
+            <div id="logo-container" class="nav-phone school-logo-container">
+                <li class="nav-phone logo">
+                    <img id="logo" src="../../../../images/logo.jpg">
+                </li>
+                <li class="nav-phone title">
+                    <div id="title">Galileo School</div>
+                </li>
+            </div>
+        </div>
+        <!-- Items which should be on the right -->
+        <div class="right">
+
+            <!-- Language selection dropdown -->
+<div id="langBtn" onclick="location.href='../../../en/school/kindergarten/index.html'" class="nav-phone lang darker-gray">
+    <div class="lang-text">EN</div>
+</div>
+
+            <!-- Button for opening navigation bar dropdown -->
+            <div id="nav-btn" class="nav-phone toggle square">
+                <img id="menu-img" src="../../../../images/icons/menu.png">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Search result display box -->
+<div id="search_results" class="search-result"></div>
+
+<!-- The actual navigation menu -->
+<div id="nav-desk" class="nav-desk">
+    <!-- We prefer ul (unordered list) for the menu structure and flexibility -->
+    <ul id="main-nav" class="navbar">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='../../../sk/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Hlavná Stránka</div>
+</li>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">O Škole</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li id="kindergarten" onclick="location.href='../../../sk/school/kindergarten/index.html'">Škôlka</li>
+            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html'">Základná Škola</li>
+            <li id="highschool" onclick="location.href='../../../sk/school/highSchool/index.html'">Gymnázium</li>
+        </ul>
+    </div>
+</li>
+<li onclick="location.href='../../../sk/school/summer/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Letná Škola</div>
+</li>
+<li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
+    <div class="nav-elem-text">Žiacka Knižka</div>
+</li>
+<li onclick="location.href='../../../sk/interviews/index.html'" class="nav-elem">
+    <div>Absolventi</div>
+</li>
+<li onclick="location.href='../../../sk/admissions/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Prijímacie Pohovory</div>
+</li>
+<li onclick="location.href='../../../sk/contactus/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Kontakty</div>
+</li>
+    </ul>
+
+    <ul id="sub-nav" class="navbar">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='https://www.eteach.com/careers/galileoschool'" class="nav-elem">
+    <div>Pracuj pre nás</div>
+</li>
+<li onclick="location.href='../../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
+<li onclick="location.href='https://www.microsoft.com/sk-sk/microsoft-teams/log-in'" class="nav-elem">
+    <div>Dištančné Vzdelávanie</div>
+</li>
+    </ul>
+</div>
+
+<div id="nav-phone" class="phone-menu">
+    <ul id="nav-phone-list" class="phone-nav">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='../../../sk/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Hlavná Stránka</div>
+</li>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">O Škole</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li id="kindergarten" onclick="location.href='../../../sk/school/kindergarten/index.html'">Škôlka</li>
+            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html'">Základná Škola</li>
+            <li id="highschool" onclick="location.href='../../../sk/school/highSchool/index.html'">Gymnázium</li>
+        </ul>
+    </div>
+</li>
+<li onclick="location.href='../../../sk/school/summer/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Letná Škola</div>
+</li>
+<li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
+    <div class="nav-elem-text">Žiacka Knižka</div>
+</li>
+<li onclick="location.href='../../../sk/interviews/index.html'" class="nav-elem">
+    <div>Absolventi</div>
+</li>
+<li onclick="location.href='../../../sk/admissions/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Prijímacie Pohovory</div>
+</li>
+<li onclick="location.href='../../../sk/contactus/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Kontakty</div>
+</li>
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='https://www.eteach.com/careers/galileoschool'" class="nav-elem">
+    <div>Pracuj pre nás</div>
+</li>
+<li onclick="location.href='../../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
+<li onclick="location.href='https://www.microsoft.com/sk-sk/microsoft-teams/log-in'" class="nav-elem">
+    <div>Dištančné Vzdelávanie</div>
+</li>
+    </ul>
+</div>
+    <div class="content">
+        <div id="menu-overlay" class="transparent overlay no-display"></div>
+        <style>
+    .special {
+        height: clamp(150px, 100% ,400px); 
+        object-fit: cover;
+    }
+
+    @media screen and (min-width: 670px) {
+        .special {
+            height: clamp(210px, 25vw ,480px); 
+        }
+
+        .clickable:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+            transition: .4s;
+        }
+    }
+</style>
+
+<!-- The link below explains how a bootstrap carousel works -->
+<!-- https://getbootstrap.com/docs/4.3/components/carousel/ -->
+<div id="carousel" class="carousel slide" data-ride="carousel">
+    <!-- The slide indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+    </ol>
+    <!-- Carousel content -->
+    <div class="carousel-inner">
+        <!-- Every item is enclosed in a carousel-item div -->
+        <!-- Each item has an img for the slide -->
+        <!-- Each also has a title and description -->
+        <!-- The contents are language specific and can be found in carousel_contents.html -->
+        <div class="carousel-item active">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel1.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    zrekonštruovaná budova
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel2.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    Areál so špotoviskami a preliezkami
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel3.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    špeciálne miestnosti
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel4.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    prepojenie interiéru a exteríeru
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item clickable" onclick="location.href='../../../en/PearsonEdexcel/index.html'">
+            <img class="d-block w-100 carousel-img special" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel5.jpg" style alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    Medzinárodne uznávané certifikáty
+                </p>
+            </div>
+        </div>
+        <!-- Template: -->
+        <!-- 
+        <div class="carousel-item">
+            <img class="d-block w-100" src="[LINK TO IMAGE]" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    
+                </p>
+            </div>
+        </div> 
+        -->
+    </div>
+    <!-- Carousel control arrows -->
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+        <div id="interviews-heading" class="admissions">Materská Škola</div>
+
+        <div class="card-deck about">
+            <div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/bilingual.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Bilingválna výučba</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Schopnosť osvojiť si druhý jazyk vekom klesá. Vo veku 3 – 5 rokov je učenie jazyka pre dieťa prirodzené a intuitívne.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Úlohou predprimárneho vzdelávania je optimálny rozvoj dieťaťa po všetkých stránkach a jeho pripravenosť na školské vzdelávanie. Program materskej školy GALILEO SCHOOL vychádza z požiadaviek bilingválneho programu základnej školy GALILEO SCHOOL, s ktorou spolu s gymnáziom tvoria ucelený edukačný systém, na konci ktorého je pripravenosť žiaka na štúdium na najprestížnejších univerzitách sveta. </p><br><p>Materská škola GALILEO SCHOOL zabezpečuje bilingválnu formu edukácie v slovenskom a anglickom jazyku. Hlavným cieľom je vzbudiť u detí prirodzený záujem o angličtinu. Prvý kontakt s angličtinou a anglicky hovoriacim lektorom majú už 3-ročné deti. Výsledky bilingválnej výučby vidia rodičia doma už po niekoľkých mesiacoch, kedy si deti osvojujú prvé anglické výrazy a dokážu pomenovať veci okolo seba v slovenskom i anglickom jazyku. </p><br><p>V poslednom ročníku materskej školy sú deti dôkladne pripravované na vstup do prvého ročníka základnej školy. Spoznávajú anglickú abecedu pomocou metódy Jolly Phonics a súčasťou výučby anglického jazyka sú v poslednom ročníku aj častejšie hodiny s natívne anglicky hovoriacim lektorom. </p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/playing.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Učenie hrou</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Každá hra je učením a každé učenie je hrou.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Dominantnou metódou a formou aktivizujúcej výučby v materskej škole GALILEO SCHOOL je hra. Učiteľ pri jej riadení vychádza z vedomostí o podstate, význame a dispozíciách rôznych druhov hier pre rozvoj osobnosti dieťaťa. Hra je pre dieťa zábavou, ľahkým učením sa, niečím, čím získava zdravie, šťastie a spokojnosť. Učenie hrou nadväzuje na vývin dieťaťa, dieťa sa najviac a najlepšie naučí práve v hre, a tým osobnostne napreduje. Dieťa sa hrou učí a vyjadruje, v hre prejavuje charakteristiky svojej osobnosti. Hra je v predprimárnom vzdelávaní významnou výučbovou i diagnostickou metódou.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/experience.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Zážitkové učenie</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Deti objavujú svet všetkými zmyslami, jednoducho ho zažívajú.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Opodstatnenosť učenia zážitkom vychádza zo skutočnosti, že to, čo človek sám prežil, cítil, videl, zostáva zakotvené hlboko v jeho vedomí. Prostredníctvom zážitkového učenia možno preniknúť do srdca každého dieťaťa, a zároveň sa podieľať na tom, aby deti v materskej škole boli šťastné, spokojné, aby na roky detstva spomínali s úsmevom a s pocitom prežitej radosti.</p><br><p>Profesionálny kvalifikovaný tím učiteľov v materskej škole GALILEO SCHOOL v edukačnom procese využíva metódy zážitkového učenia. Prostredníctvom zážitkov dieťa nadobúda nové poznatky a vedomosti, ktoré mu umožňujú jednoduchšie si osvojiť získané poznatky bez cieleného učenia. Vďaka nízkemu počtu detí v triede môžeme deťom ukázať svet v jeho konkrétnych podobách, môžu ho skúmať, ovoňať, ochutnať, chytiť - jednoducho ho môžu zažiť. </p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/outdoors.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Učenie v prírode</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Výučba prebieha vo vnútri i vonku. Triedičky sú priamo prepojené s predzáhradkami – outdoorovými učebňami.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Vyučovanie v prírode sa nemusí odohrávať len kdesi hlboko v lese. V materskej škole GALILEO SCHOOL sú triedičky priamo prepojené s predzáhradkami, kde sú deti v tesnom kontakte s prírodou v tieni urastených stromov, na mäkkom trávniku, alebo v pieskovisku. V areáli školy je množstvo preliezok, ihrísk, outdoorové učebne, pestovateľské hranty...</p><br><p>V korunách stromov hniezdia vtáky. Tento rok sme pozorovali malú sovu, ktorá vyrastala pred zrakmi detí. V predzáhradkách deti osadili množstvo kŕmidiel, ktoré pravidelne plnia krmivom, a tak majú deti skvelú príležitosť pozorovať vtáctvo po celý rok.            </p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/discovery.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Radosť z objavovania</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Objavovanie mení svet zázrakov na svet faktov a informácií.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Deti už od útleho detstva prejavujú radosť z objavovania prírody a pestujú si kladný vzťah k nej. Obľubujú témy zo živej i neživej prírody, mnohé z nich majú pre deti náznak kúzla. Skúsení učitelia materskej školy GALILEO SCHOOL práve prostredníctvom uplatňovania bádateľských metód umožňujú deťom postupne prechádzať z detského sveta zázrakov do sveta faktov a informácií.</p><br><p>V krásnom areáli plnom záhradiek, hrantov na pestovanie rastliniek si deti zároveň rozvíjajú manuálne zručnosti i schopnosť pozorovať a zdôvodňovať uskutočňované činnosti. Vlastná prieskumná činnosť detí predškolského veku je založená na simulovaní práce vedcov. Dieťaťu predkladáme čo najviac podnetov pre objavovanie, skúmanie, pretože každá skúsenosť, ktorú zistí vlastnou aktivitou, je preň veľkým objavom.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/creativity.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Rozvoj tvorivosti a fantázie</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Detská kresba udivuje svojou jednoduchosťou, naivitou, emocionalitou a originalitou.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Výtvarný prejav dieťaťa je fenomén hodný vystavenia, obdivu a triedičky materskej školy GALILEO SCHOOL sú zdobené a pravidelne obmieňané práve vlastnoručnými prácami detí. Mnohí rodičia si starostlivo odkladajú prvé kresby svojich detí, vidia v nich špecifický odkaz a učitelia vo výtvarných prejavoch objavujú prekvapujúce vývinové skoky detí a špecifickú detskú reč. Práve cez kresbu je možné nahliadnuť do pocitov, fantázie a želaní detského jedinca.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/food.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Zdravá a pestrá strava</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Najlepším kuchárom nemusí byť hlad, ale tím tvorivých kuchárov.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Najlepšou podporou chuti do jedla je aktívny pobyt na čerstvom vzduchu. V GALILEO SCHOOL si deti pestujú kladný vzťah k jedlu aj vlastným podieľaním sa na jeho príprave. Polievočka s vlastnoručne nazbieranou petržlenovou vňaťou je najchutnejšia na svete. K chuti prispievajú aj recepty od majstrov kuchárov, ktorých pravidelne pozývame do našej kuchyne, aby nás naučili pripravovať moderné a pestré jedlá. </p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/summer.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Program na celé leto</h3>
+                </div>
+                <div class="card-text short">
+                    <p>V letných mesiacoch ponúkame denný letný tábor.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Materská škola GALILEO SCHOOL je počas roka zatvorená iba v čase prázdnin, ktorých termín určuje ministerstvo školstva. Počas celého leta však poskytuje denný letný tábor v týždenných turnusoch. Každý týždeň sa zaoberá inou ústrednou témou, v ktorej si deti rozširujú anglickú terminológiu a schopnosť komunikovať. </p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/kindergarten/corona.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Koronový program</h3>
+                </div>
+                <div class="card-text short">
+                    <p>V čase korony sme prešli na on-line výučbu.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Škola GALILEO SCHOOL v decembri 2020 zriadila svoje vlastné mobilné odberové miesto, ktoré bolo podľa potreby k dispozícii všetkým zamestnancom školy a tiež rodičom detí. To umožnilo v školskom roku 2020/2021 fungovať škole takmer nepretržite. </p><br><p>V programe materskej školy GALILEO SCHOOL je aj rozvoj digitálnej gramotnosti, ktorej súčasťou je budovanie kladného vzťahu k digitálnym technológiám a tiež určovanie rozumnej miery ich používania. Vo výučbe učitelia využívajú Bee-Bota, tablety aj interaktívnu tabuľu. </p><br><p>V čase lockdownu boli učitelia v pravidelnom kontakte so svojimi deťmi práve cez on-line výučbu. Znie to neuveriteľne, ale deti aj túto výzvu úspešne zvládli.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <!-- Scripts at the end to make sure everything else is already loaded. -->
+    <script src="../../../../js/carousel.js"></script>
+    <script src="../../../../js/about.js"></script>
+</body>
+
+</html>

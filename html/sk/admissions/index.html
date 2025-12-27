@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!-- This indention is totally legal and we are 100% certain about this -->
+<html lang="en">
+    
+<head>
+    <!-- Tells browser what character set we want. Default does not include SK characters -->
+<meta charset="utf-8">
+<!-- Sets scale and width so our website displays properly on all devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="all">
+<meta name="description" content="GALILEO SCHOOL">
+<!-- Tab displays the custom text below instead of the file name -->
+<title>GALILEO SCHOOL- súkromná anglická škola</title>
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="copyright" content="© 2021, GALILEO SCHOOL, s.r.o.">
+<!-- Style -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="../../../css/style.css">
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../../../js/navigation.js"></script>
+<script src="../../../js/searcher.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1H4RVL2L4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q1H4RVL2L4');
+</script>
+<!-- end of Global site tag (gtag.js) - Google Analytics -->
+
+    <script src="../../../js/modules/Modal.js"></script>
+</head>
+
+<body>
+    <div id="modal-background" class="admissions no-display"></div>
+    <!-- Header -->
+<!-- The header usually contains the logo and a navigation bar -->
+<!-- Navigation bar -->
+<nav>
+    <!-- Navigation for smaller devices -->
+    <div id="nav-bar" class="nav-phone">
+        <!-- Items which should be on the left -->
+        <div class="left">
+            <!-- Search button -->
+            <div class="search-container close">
+                <input type="search" name="searchInp" id="search_box" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)"/>
+                <script>
+                    document.getElementById('search_box').addEventListener('keypress', (e) =>{
+                        if(e.keyCode === 13 && e.target.value.length > 2)
+                            sendSearch(e.target.value, 'search.html');
+                    });
+                </script>
+            </div>
+            <div id="search" class="nav-phone search">
+                <img id="search-img" src="../../../images/icons/search.png">
+            </div>
+            <div class="nav-container-desktop">
+                <a href="https://galileoschool.edupage.org/znamky/">Edupage</a>
+            </div>
+            <!-- School logo -->
+            <div id="logo-container" class="nav-phone school-logo-container">
+                <li class="nav-phone logo">
+                    <img id="logo" src="../../../images/logo.jpg">
+                </li>
+                <li class="nav-phone title">
+                    <div id="title">Galileo School</div>
+                </li>
+            </div>
+        </div>
+        <!-- Items which should be on the right -->
+        <div class="right">
+
+            <!-- Language selection dropdown -->
+<div id="langBtn" onclick="location.href='../../en/admissions/index.html'" class="nav-phone lang darker-gray">
+    <div class="lang-text">EN</div>
+</div>
+
+            <!-- Button for opening navigation bar dropdown -->
+            <div id="nav-btn" class="nav-phone toggle square">
+                <img id="menu-img" src="../../../images/icons/menu.png">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Search result display box -->
+<div id="search_results" class="search-result"></div>
+
+<!-- The actual navigation menu -->
+<div id="nav-desk" class="nav-desk">
+    <!-- We prefer ul (unordered list) for the menu structure and flexibility -->
+    <ul id="main-nav" class="navbar">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='../../sk/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Hlavná Stránka</div>
+</li>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">O Škole</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li id="kindergarten" onclick="location.href='../../sk/school/kindergarten/index.html'">Škôlka</li>
+            <li id="primaryschool" onclick="location.href='../../sk/school/primarySchool/index.html'">Základná Škola</li>
+            <li id="highschool" onclick="location.href='../../sk/school/highSchool/index.html'">Gymnázium</li>
+        </ul>
+    </div>
+</li>
+<li onclick="location.href='../../sk/school/summer/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Letná Škola</div>
+</li>
+<li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
+    <div class="nav-elem-text">Žiacka Knižka</div>
+</li>
+<li onclick="location.href='../../sk/interviews/index.html'" class="nav-elem">
+    <div>Absolventi</div>
+</li>
+<li onclick="location.href='../../sk/admissions/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Prijímacie Pohovory</div>
+</li>
+<li onclick="location.href='../../sk/contactus/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Kontakty</div>
+</li>
+    </ul>
+
+    <ul id="sub-nav" class="navbar">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='https://www.eteach.com/careers/galileoschool'" class="nav-elem">
+    <div>Pracuj pre nás</div>
+</li>
+<li onclick="location.href='../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
+<li onclick="location.href='https://www.microsoft.com/sk-sk/microsoft-teams/log-in'" class="nav-elem">
+    <div>Dištančné Vzdelávanie</div>
+</li>
+    </ul>
+</div>
+
+<div id="nav-phone" class="phone-menu">
+    <ul id="nav-phone-list" class="phone-nav">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='../../sk/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Hlavná Stránka</div>
+</li>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">O Škole</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li id="kindergarten" onclick="location.href='../../sk/school/kindergarten/index.html'">Škôlka</li>
+            <li id="primaryschool" onclick="location.href='../../sk/school/primarySchool/index.html'">Základná Škola</li>
+            <li id="highschool" onclick="location.href='../../sk/school/highSchool/index.html'">Gymnázium</li>
+        </ul>
+    </div>
+</li>
+<li onclick="location.href='../../sk/school/summer/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Letná Škola</div>
+</li>
+<li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
+    <div class="nav-elem-text">Žiacka Knižka</div>
+</li>
+<li onclick="location.href='../../sk/interviews/index.html'" class="nav-elem">
+    <div>Absolventi</div>
+</li>
+<li onclick="location.href='../../sk/admissions/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Prijímacie Pohovory</div>
+</li>
+<li onclick="location.href='../../sk/contactus/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Kontakty</div>
+</li>
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='https://www.eteach.com/careers/galileoschool'" class="nav-elem">
+    <div>Pracuj pre nás</div>
+</li>
+<li onclick="location.href='../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
+<li onclick="location.href='https://www.microsoft.com/sk-sk/microsoft-teams/log-in'" class="nav-elem">
+    <div>Dištančné Vzdelávanie</div>
+</li>
+    </ul>
+</div>
+    <div class="content">
+        <div id="menu-overlay" class="transparent overlay no-display"></div>
+        <style>
+    .special {
+        height: clamp(150px, 100% ,400px); 
+        object-fit: cover;
+    }
+
+    @media screen and (min-width: 670px) {
+        .special {
+            height: clamp(210px, 25vw ,480px); 
+        }
+
+        .clickable:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+            transition: .4s;
+        }
+    }
+</style>
+
+<!-- The link below explains how a bootstrap carousel works -->
+<!-- https://getbootstrap.com/docs/4.3/components/carousel/ -->
+<div id="carousel" class="carousel slide" data-ride="carousel">
+    <!-- The slide indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+    </ol>
+    <!-- Carousel content -->
+    <div class="carousel-inner">
+        <!-- Every item is enclosed in a carousel-item div -->
+        <!-- Each item has an img for the slide -->
+        <!-- Each also has a title and description -->
+        <!-- The contents are language specific and can be found in carousel_contents.html -->
+        <div class="carousel-item active">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel1.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    zrekonštruovaná budova
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel2.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    Areál so špotoviskami a preliezkami
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel3.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    špeciálne miestnosti
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel4.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    prepojenie interiéru a exteríeru
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item clickable" onclick="location.href='../../en/PearsonEdexcel/index.html'">
+            <img class="d-block w-100 carousel-img special" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel5.jpg" style alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    Medzinárodne uznávané certifikáty
+                </p>
+            </div>
+        </div>
+        <!-- Template: -->
+        <!-- 
+        <div class="carousel-item">
+            <img class="d-block w-100" src="[LINK TO IMAGE]" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    
+                </p>
+            </div>
+        </div> 
+        -->
+    </div>
+    <!-- Carousel control arrows -->
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+        <div id="interviews-heading" class="admissions">Prijímacie Pohovory</div>
+        <!-- Cards -->
+<div class="card-deck index admissions">
+    <!-- Card 1 -->
+    <div id="1" class="card admiss" onclick="Click(this)">
+        <h4 class="card-title">Gymnázium</h4>
+        <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/admissions/gym.jpg" class="card-img-top" alt="Picture Not Available!">
+        <div class="no-display admiss-text"><div class="heading" id="heading">
+    <div class="logo"><img id="logo" src="../../../images/logo.jpg"></div>
+</div>
+<h6 class="title">Prijímacie konanie na bilingválne štúdium do Súkromného gymnázia GALILEO SCHOOL, Dudvážska 6, 821 07 Bratislava 214 </h6>
+<h5 class="box">Termín na podanie (elektronické odoslanie) vyplnenej prihlášky na každú strednú školu, na ktorú sa uchádzač hlási, je do 20. februára 2026. </h6>
+<ol>
+    <li><p>Prijímacie skúšky - talentové skúšky sa budú konať v zmysle platnej školskej legislatívy (Zákona č. 245/2008 Z. z.) na základe overenia špeciálnych schopností, zručností a nadania.</p></li>
+    <li><p>Riaditeľ školy po prerokovaní v pedagogickej rade školy a so zriaďovateľom plánuje v nasledujúcom školskom roku otvoriť 2 triedy v 1. ročníku študijného odboru 7902 J 74 - bilingválne štúdium. V zmysle zákona č. 61/2015 Z.z. Samosprávny kraj zverejní najvyšší počet žiakov prvého ročníka do 30. novembra.</p></li>
+    <li><p>Termíny talentových skúšok: 1.termín - 23. marca 2026, 2.termín - 30. marca 2026.</p></li>
+    <li><p>Obsah overenia špeciálnych schopností, zručností a nadania:</p>
+        <p class="no-margin">Test na overenie všeobecných jazykových a študijných predpokladov v anglickom jazyku. Test na báze Cognitive Abilities Test hodnotí nasledovné oblasti uvažovania:</p>
+        <ul>
+            <li>verbálne</li>
+            <li>kvantitatívne</li>
+            <li>neverbálne a priestorové</li>
+        </ul>
+    </li>
+    <li><p>Podmienka prijatia: Uchádzač môže byť prijatý na štúdium v prípade, že dosiahne spolu minimálne 75 bodov SAS z verbálnej zložky CAT testu z anglického jazyka a ktorý nebol klasifikovaný zníženou známkou zo správania počas štúdia na základnej škole. </p></li>
+    <li><p>Riaditeľ školy zverejní zoznam s kódovým označením všetkých prijatých a neprijatých uchádzačov 15. apríla 2026. Neúčasť na prijímacích skúškach (ochorenie – doklad od lekára nesmie byť starší ako 3 dni) treba oznámiť telefonicky a písomné potvrdenie od lekára treba doručiť na riaditeľstvo školy.</p></li>
+</ol>
+<h6 class="sub-title">Kritériá prijímacieho konania pre školský rok 2026/2027</h6>
+<ol>
+    <li>
+        <h6>ZOHĽADNENIE ŠTUDIJNÝCH VÝSLEDKOV</h6>
+        <p>Za prospech na základnej škole budú pridelené preferenčné body podľa známok z koncoročnej klasifikácie z 8. ročníka a z polročnej klasifikácie z 9. ročníka (resp. v prípade žiakov, ktorí sú v 8. ročníku, z koncoročnej klasifikácie zo 7. ročníka a z polročnej klasifikácie z 8. ročníka) okrem známky 5 – nedostatočný nasledovne:</p>
+        <div class="box">
+            <p class="no-margin">Dva povinné predmety:</p>
+            <ul>
+                <li>Slovenský jazyk a literatúra</li>
+                <li>Matematika</li>
+            </ul>
+            <p>Do celkového súčtu budú pridelené body za každú známku samostatne podľa nasledujúceho vzťahu: </p>
+            <p>Počet bodov = 5.(4−x).(4−x) , kde x je známka</p>
+        </div>
+        <div class="box">
+            <p>Profilový predmet – Anglický jazyk:</p>
+            <p>Do celkového súčtu budú pridelené body za každú známku samostatne podľa nasledujúceho vzťahu: </p>
+            <p>Počet bodov = 3.(4−x).(4−x), kde x je známka</p>
+        </div>
+        <div class="box">
+            <p>Prospech:</p>
+            <p>Ak žiak dosiahol v 8., 7. a 6. ročníku (resp. v 7., 6. a 5. ročníku pre žiaka navštevujúceho 8. ročník) stupeň 1 – výborný zo všetkých predmetov, do celkového hodnotenia sa započíta 5 bodov za každý školský rok. </p>
+        </div>
+    </li>
+        <li>
+        <h6>ĎALŠIE KRITÉRIÁ</h6>
+        <p>Do celkového súčtu budú pridelené body za každé kritérium samostatne.</p>
+        <h6>Talentové skúšky - CAT test</h6>
+        <p>Percentuálna úspešnosť verbálnej zložky v teste Cognitive Abilities Tests, maximálne 100 bodov. Percentuálna úspešnosť v online testoch Cognitive Abilities Tests sa započíta ako počet bodov.</p>
+        <h6>Talentové skúšky - esej</h6>
+        <p>Celkové hodnotenie z písomnej časti testu iLowerSecondary English v anglickom jazyku sa započíta ako počet bodov, maximálne 100 bodov.</p>
+        <h6>Predmetová olympiáda</h6>
+        <p>Predmetová olympiáda sa započítava do celkového hodnotenia, ak sa žiak umiestnil na 1. mieste až 5. mieste v okresnom alebo krajskom kole v 8. ročníku alebo 9. ročníku v olympiáde zo SJL, cudzieho jazyka (ANJ, NEJ, RUJ, SJA, FRJ), DEJ, MAT, FYZ, CHE, BIO, GEG alebo technickej olympiáde a Pytagoriáde, maximálne 100 bodov.</p>
+        <h6>UKMT Mathematics Challenge</h6>
+        <p>Výsledok na súťaži UKMT Junior Challenge alebo UKMT Intermediate Challenge sa započíta ako počet bodov, maximálne 100 bodov.</p>
+        </li>
+    <li>
+        <h6>V prípade rovnosti bodov, budú postupne uplatnené nasledovné kritériá:</h6>
+        <ol class="abc">
+            <li>Podľa § 67 ods. 3 zákona č. 245/2008 Z. z. o výchove a vzdelávaní (školský zákon) a o zmene a doplnení niektorých zákonov v znení neskorších predpisov bude prednostne prijatý uchádzač, ktorý má podľa rozhodnutia posudkovej komisie sociálneho zabezpečenia zmenenú pracovnú schopnosť,</li>
+            <li>Získal väčší počet bodov za bod č. 2 Ďalšie kritéria, </li>
+            <li>Dosiahol väčší počet z určeného profilového predmetu školy.</li>
+        </ol>
+    </li>
+</ol>
+<p class="box">Vstupné údaje: vyplnená prihláška na vzdelávanie na strednú školu, prípadne vysvedčenie žiaka, diplomy alebo výsledkové listiny preukazujúce poradie žiaka, prípadne jeho výkon.</p> 
+<h6 class="bold">Platnosť dokumentu je od 15. novembra 2024.</h6>
+<h6 class="sub-title">Kritériá prijímacieho konania pre školský rok 2027/2028</h6>
+<ol>
+    <li>
+        <h6>ZOHĽADNENIE ŠTUDIJNÝCH VÝSLEDKOV</h6>
+        <p>Za prospech na základnej škole budú pridelené preferenčné body podľa známok z koncoročnej klasifikácie z 8. ročníka a z polročnej klasifikácie z 9. ročníka (resp. v prípade žiakov, ktorí sú v 8. ročníku, z koncoročnej klasifikácie zo 7. ročníka a z polročnej klasifikácie z 8. ročníka) okrem známky 5 – nedostatočný nasledovne:</p>
+        <div class="box">
+            <p class="no-margin">Dva povinné predmety:</p>
+            <ul>
+                <li>Slovenský jazyk a literatúra</li>
+                <li>Matematika</li>
+            </ul>
+            <p>Do celkového súčtu budú pridelené body za každú známku samostatne podľa nasledujúceho vzťahu: </p>
+            <p>Počet bodov = 5.(4−x).(4−x) , kde x je známka</p>
+        </div>
+        <div class="box">
+            <p>Profilový predmet – Anglický jazyk:</p>
+            <p>Do celkového súčtu budú pridelené body za každú známku samostatne podľa nasledujúceho vzťahu: </p>
+            <p>Počet bodov = 3.(4−x).(4−x), kde x je známka</p>
+        </div>
+        <div class="box">
+            <p>Prospech:</p>
+            <p>Ak žiak dosiahol v 8., 7. a 6. ročníku (resp. v 7., 6. a 5. ročníku pre žiaka navštevujúceho 8. ročník) stupeň 1 – výborný zo všetkých predmetov, do celkového hodnotenia sa započíta 5 bodov za každý školský rok. </p>
+        </div>
+    </li>
+        <li>
+        <h6>ĎALŠIE KRITÉRIÁ</h6>
+        <p>Do celkového súčtu budú pridelené body za každé kritérium samostatne.</p>
+        <h6>Talentové skúšky - CAT test</h6>
+        <p>Percentuálna úspešnosť verbálnej zložky v teste Cognitive Abilities Tests, maximálne 100 bodov. Percentuálna úspešnosť v online testoch Cognitive Abilities Tests sa započíta ako počet bodov.</p>
+        <h6>Talentové skúšky - esej</h6>
+        <p>Celkové hodnotenie z písomnej časti testu iLowerSecondary English v anglickom jazyku sa započíta ako počet bodov, maximálne 100 bodov.</p>
+        <h6>Predmetová olympiáda</h6>
+        <p>Predmetová olympiáda sa započítava do celkového hodnotenia, ak sa žiak umiestnil na 1. mieste až 5. mieste v okresnom alebo krajskom kole v 8. ročníku alebo 9. ročníku v olympiáde zo SJL, cudzieho jazyka (ANJ, NEJ, RUJ, SJA, FRJ), DEJ, MAT, FYZ, CHE, BIO, GEG alebo technickej olympiáde a Pytagoriáde, maximálne 100 bodov.</p>
+        <h6>UKMT Mathematics Challenge</h6>
+        <p>Výsledok na súťaži UKMT Junior Challenge alebo UKMT Intermediate Challenge sa započíta ako počet bodov, maximálne 100 bodov.</p>
+        </li>
+    <li>
+        <h6>V prípade rovnosti bodov, budú postupne uplatnené nasledovné kritériá:</h6>
+        <ol class="abc">
+            <li>Podľa § 67 ods. 3 zákona č. 245/2008 Z. z. o výchove a vzdelávaní (školský zákon) a o zmene a doplnení niektorých zákonov v znení neskorších predpisov bude prednostne prijatý uchádzač, ktorý má podľa rozhodnutia posudkovej komisie sociálneho zabezpečenia zmenenú pracovnú schopnosť,</li>
+            <li>Získal väčší počet bodov za bod č. 2 Ďalšie kritéria, </li>
+            <li>Dosiahol väčší počet z určeného profilového predmetu školy.</li>
+        </ol>
+    </li>
+</ol>
+<p class="box">Vstupné údaje: vyplnená prihláška na vzdelávanie na strednú školu, prípadne vysvedčenie žiaka, diplomy alebo výsledkové listiny preukazujúce poradie žiaka, prípadne jeho výkon.</p> 
+<h6 class="bold">Platnosť dokumentu je od 15. novembra 2024.</h6>
+<h6>Pre doplňujúce informácie nás kontaktujte emailom na <a href="mailto:info@galileoschool.sk">info@galileoschool.sk</a></h6></div>
+    </div>
+
+    <!-- Card 2 -->
+    <div id="2" class="card admiss" onclick="Click(this)">
+        <h4 class="card-title">Základná Škola</h4>
+        <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/admissions/primary_school.JPG" class="card-img-top" alt="Picture Not Available!">
+        <div class="no-display admiss-text"><div class="heading" id="heading">
+    <div class="logo"><img id="logo" src="../../../images/logo.jpg"></div>
+</div>
+<h6 class="title">Zápis do 1. ročníka</h6>
+<ol>
+    <li><p>Deti z prípravných tried GALILEO SCHOOL (Butterflies, Bumblebees a Lions) sa zahrajú na prvákov, navštívia prvácke triedy a zažijú pravú prvácku vyučovaciu hodinu matematiky, angličtiny a Science s naším učiteľom (native speaker). Zápis pre záujemcov z iných materských škôl bude prebiehať v rovnakom termíne. Dátum a čas je zverejnený na <a href="https://galileoschool.edupage.org/news/">galileoschool.edupage.org/news</a></p></li>
+    <li><p>Čo si priniesť? Záujemcovia z iných materských škôl budú potrebovať:</p></li>
+		<ul>
+            <li>občiansky preukaz zákonného zástupcu</li>
+            <li>rodný list dieťaťa</li>
+            <li>výsledky Testov školskej zrelosti.</li>
+        </ul>
+    <li><p>Zápisu detí z iných materských škôl do 1. ročníka sa zúčastňuje dieťa spolu so zákonným zástupcom. Do prvého ročníka môže byť zapísané dieťa, ktoré v čase nástupu na povinnú školskú dochádzku dovŕši vek 6 rokov a ovláda anglický jazyk na komunikačnej úrovni. (Škola si vyhradzuje právo dieťa pretestovať.)</p></li>
+    <li><p>V prípade záujmu o zápis dieťaťa z inej materskej školy do prvého ročníka SZŠ GALILEO SCHOOL na nasledujúci školský rok nás kontaktujte na emailovej adrese <a href="mailto:info@galileoschool.sk">info@galileoschool.sk</a> a my Vás následne budeme informovať ohľadom ďalšieho postupu.</p></li>
+</ol>
+<h6 class="title">Prestup na Súkromnú Základnú Školu GALILEO SCHOOL, Dudvážska 6, 821 07 Bratislava 214</h6>
+<ol>
+    <li><p>Vaše otázky ohľadom štúdia na GALILEO SCHOOL prosím zasielať na emailovú adresu <a href="mailto:info@galileoschool.sk">info@galileoschool.sk</a>, prípadne nás kontaktujte telefonicky na čísle  <a href="tel:+421 2 4598 1928">+421 2 4598 1928</a>. Náš prijímací manažér, pani Viera Kmeť Drahovská, ktorá je zodpovedná za prijímanie nových žiakov, vám rada odpovie na vaše otázky ohľadom prijímacieho procesu a dohodne si s vami návštevu školy.</p></li>
+    <li><p>Pri prijímaní nových žiakov, riaditeľka školy zaradí žiaka do triedy podľa veku dieťaťa, počtu rokov ukončenej školskej dochádzky v čase prihlásenia, predchádzajúcich školských výsledkov a vedomostí z angličtiny.</p></li>
+</ol></div>
+    </div>
+
+    <!-- Card 3 -->
+    <div id="3" class="card admiss" onclick="Click(this)">
+        <h4 class="card-title">Materská Škola</h4>
+        <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/admissions/kindergarten.JPG" class="card-img-top" alt="Picture Not Available!">
+        <div class="no-display admiss-text"><div class="heading" id="heading">
+    <div class="logo"><img id="logo" src="../../../images/logo.jpg"></div>
+</div>
+<h6 class="title">Prijímacie konanie na Súkromnú Materskú Školu GALILEO SCHOOL, Dudvážska 6, 821 07 Bratislava 214</h6>
+<ol>
+    <li><p>Vaše otázky ohľadom štúdia na GALILEO SCHOOL prosím zasielať na emailovú adresu <a href="mailto:info@galileoschool.sk">info@galileoschool.sk</a>, prípadne nás kontaktujte telefonicky na čísle  <a href="tel:+421 2 4598 1928">+421 2 4598 1928</a>. Náš prijímací manažér, pani Viera Kmeť Drahovská, ktorá je zodpovedná za prijímanie nových žiakov, vám rada odpovie na vaše otázky ohľadom prijímacieho procesu a dohodne si s vami návštevu školy.</p></li>
+    <li><p>Pri prijímaní nových žiakov, riaditeľka školy zaradí žiaka do triedy podľa veku dieťaťa, počtu rokov ukončenej školskej dochádzky v čase prihlásenia, predchádzajúcich školských výsledkov a vedomostí z angličtiny.</p></li>
+</ol></div>
+    </div>
+</div>
+    </div>
+
+    <div id="modal-close" class="admissions modal-close no-display fixed top">
+        <img src="../../../images/icons/close_black.png" alt="">
+    </div>
+    <div id="modal-box" class="admissions modal fixed"></div>
+    <!-- Scripts at the end to make sure everything else is already loaded. -->
+    <script src="../../../js/carousel.js"></script>
+    <script src="../../../js/admissions.js"></script>
+</body>
+</html>
