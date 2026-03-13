@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!-- This indention is totally legal and we are 100% certain about this -->
+<html lang="en">
+
+<head>
+    <!-- Tells browser what character set we want. Default does not include SK characters -->
+<meta charset="utf-8">
+<!-- Sets scale and width so our website displays properly on all devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="all">
+<meta name="description" content="GALILEO SCHOOL">
+<!-- Tab displays the custom text below instead of the file name -->
+<title>GALILEO SCHOOL- súkromná anglická škola</title>
+<link rel="shortcut icon" href="../../../../favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="../../../../favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="copyright" content="© 2021, GALILEO SCHOOL, s.r.o.">
+<!-- Style -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="../../../../css/style.css">
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../../../../js/navigation.js"></script>
+<script src="../../../../js/searcher.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1H4RVL2L4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q1H4RVL2L4');
+</script>
+<!-- end of Global site tag (gtag.js) - Google Analytics -->
+
+</head>
+
+<body>
+    <!-- Header -->
+<!-- The header usually contains the logo and a navigation bar -->
+<!-- Navigation bar -->
+<nav>
+    <!-- Navigation for smaller devices -->
+    <div id="nav-bar" class="nav-phone">
+        <!-- Items which should be on the left -->
+        <div class="left">
+            <!-- Search button -->
+            <div class="search-container close">
+                <input type="search" name="searchInp" id="search_box" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)"/>
+                <script>
+                    document.getElementById('search_box').addEventListener('keypress', (e) =>{
+                        if(e.keyCode === 13 && e.target.value.length > 2)
+                            sendSearch(e.target.value, 'search.html');
+                    });
+                </script>
+            </div>
+            <div id="search" class="nav-phone search">
+                <img id="search-img" src="../../../../images/icons/search.png">
+            </div>
+            <div class="nav-container-desktop">
+                <a href="https://galileoschool.edupage.org/znamky/">Edupage</a>
+            </div>
+            <!-- School logo -->
+            <div id="logo-container" class="nav-phone school-logo-container">
+                <li class="nav-phone logo">
+                    <img id="logo" src="../../../../images/logo.jpg">
+                </li>
+                <li class="nav-phone title">
+                    <div id="title">Galileo School</div>
+                </li>
+            </div>
+        </div>
+        <!-- Items which should be on the right -->
+        <div class="right">
+
+            <!-- Language selection dropdown -->
+<div id="langBtn" onclick="location.href='../../../en/school/highSchool/index.html'" class="nav-phone lang darker-gray">
+    <div class="lang-text">EN</div>
+</div>
+
+            <!-- Button for opening navigation bar dropdown -->
+            <div id="nav-btn" class="nav-phone toggle square">
+                <img id="menu-img" src="../../../../images/icons/menu.png">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Search result display box -->
+<div id="search_results" class="search-result"></div>
+
+<!-- The actual navigation menu -->
+<div id="nav-desk" class="nav-desk">
+    <!-- We prefer ul (unordered list) for the menu structure and flexibility -->
+    <ul id="main-nav" class="navbar">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='../../../sk/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Hlavná Stránka</div>
+</li>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">O Škole</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li id="kindergarten" onclick="location.href='../../../sk/school/kindergarten/index.html'">Škôlka</li>
+            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html'">Základná Škola</li>
+            <li id="highschool" onclick="location.href='../../../sk/school/highSchool/index.html'">Gymnázium</li>
+        </ul>
+    </div>
+</li>
+<li onclick="location.href='../../../sk/school/summer/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Letná Škola</div>
+</li>
+<li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
+    <div class="nav-elem-text">Žiacka Knižka</div>
+</li>
+<li onclick="location.href='../../../sk/interviews/index.html'" class="nav-elem">
+    <div>Absolventi</div>
+</li>
+<li onclick="location.href='../../../sk/admissions/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Prijímacie Pohovory</div>
+</li>
+<li onclick="location.href='../../../sk/contactus/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Kontakty</div>
+</li>
+    </ul>
+
+    <ul id="sub-nav" class="navbar">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='https://www.eteach.com/careers/galileoschool'" class="nav-elem">
+    <div>Pracuj pre nás</div>
+</li>
+<li onclick="location.href='../../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
+<li onclick="location.href='https://www.microsoft.com/sk-sk/microsoft-teams/log-in'" class="nav-elem">
+    <div>Dištančné Vzdelávanie</div>
+</li>
+    </ul>
+</div>
+
+<div id="nav-phone" class="phone-menu">
+    <ul id="nav-phone-list" class="phone-nav">
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='../../../sk/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Hlavná Stránka</div>
+</li>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">O Škole</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li id="kindergarten" onclick="location.href='../../../sk/school/kindergarten/index.html'">Škôlka</li>
+            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html'">Základná Škola</li>
+            <li id="highschool" onclick="location.href='../../../sk/school/highSchool/index.html'">Gymnázium</li>
+        </ul>
+    </div>
+</li>
+<li onclick="location.href='../../../sk/school/summer/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Letná Škola</div>
+</li>
+<li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
+    <div class="nav-elem-text">Žiacka Knižka</div>
+</li>
+<li onclick="location.href='../../../sk/interviews/index.html'" class="nav-elem">
+    <div>Absolventi</div>
+</li>
+<li onclick="location.href='../../../sk/admissions/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Prijímacie Pohovory</div>
+</li>
+<li onclick="location.href='../../../sk/contactus/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Kontakty</div>
+</li>
+        <!-- Each of these li (list item) elements represents a button in our menu -->
+<li onclick="location.href='https://www.eteach.com/careers/galileoschool'" class="nav-elem">
+    <div>Pracuj pre nás</div>
+</li>
+<li onclick="location.href='../../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
+<li onclick="location.href='https://www.microsoft.com/sk-sk/microsoft-teams/log-in'" class="nav-elem">
+    <div>Dištančné Vzdelávanie</div>
+</li>
+    </ul>
+</div>
+    <div class="content">
+        <div id="menu-overlay" class="transparent overlay no-display"></div>
+        <style>
+    .special {
+        height: clamp(150px, 100% ,400px); 
+        object-fit: cover;
+    }
+
+    @media screen and (min-width: 670px) {
+        .special {
+            height: clamp(210px, 25vw ,480px); 
+        }
+
+        .clickable:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+            transition: .4s;
+        }
+    }
+</style>
+
+<!-- The link below explains how a bootstrap carousel works -->
+<!-- https://getbootstrap.com/docs/4.3/components/carousel/ -->
+<div id="carousel" class="carousel slide" data-ride="carousel">
+    <!-- The slide indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+    </ol>
+    <!-- Carousel content -->
+    <div class="carousel-inner">
+        <!-- Every item is enclosed in a carousel-item div -->
+        <!-- Each item has an img for the slide -->
+        <!-- Each also has a title and description -->
+        <!-- The contents are language specific and can be found in carousel_contents.html -->
+        <div class="carousel-item active">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel1.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    zrekonštruovaná budova
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel2.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    Areál so špotoviskami a preliezkami
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel3.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    špeciálne miestnosti
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel4.jpg" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    prepojenie interiéru a exteríeru
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item clickable" onclick="location.href='../../../en/PearsonEdexcel/index.html'">
+            <img class="d-block w-100 carousel-img special" src="https://res.cloudinary.com/galileoschool/image/upload/q_auto/galileo_web/carousel/carousel5.jpg" style alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    Medzinárodne uznávané certifikáty
+                </p>
+            </div>
+        </div>
+        <!-- Template: -->
+        <!-- 
+        <div class="carousel-item">
+            <img class="d-block w-100" src="[LINK TO IMAGE]" alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    
+                </p>
+            </div>
+        </div> 
+        -->
+    </div>
+    <!-- Carousel control arrows -->
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div> <div id="interviews-heading" class="admissions">Gymnázium</div>
+
+        <div class="card-deck about">
+            <div class="card about">
+        <div class="card-img">
+            <img src="../../../../images/AI25.jpg" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>AI na hodinách</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Nedávno sa niektoré z našich hodín umelej inteligencie dostali do médií a stali sa súčasťou globálneho vzdelávacieho úspechu! Naši žiaci sa aktívne zapájajú do práce s umelou inteligenciou prostredníctvom praktických aktivít, skúmajú jej využitie v rôznych oblastiach a rozvíjajú dôležité zručnosti v oblasti kritického myslenia a riešenia problémov. Svoje poznatky o AI si prehlbujú aj pomocou interaktívnych hier, ako sú AI Quests a Two Truths & AI, vďaka čomu je učenie zábavné a inšpiratívne. Viac o tomto úspechu si môžete prečítať tu:<a href="https://ai.iedu.sk/hodina-umelej-inteligencie-bola-na-slovensku-svetova/" target="_blank" rel="noopener noreferrer">https://ai.iedu.sk/hodina-umelej-inteligencie-bola-na-slovensku-svetova/</a>.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Integrácia umelej inteligencie do nášho vzdelávacieho programu poskytuje našim žiakom nástroje a vedomosti, ktoré potrebujú na úspech v čoraz digitálnejšom svete. S hrdosťou sledujeme ich odhodlanie porozumieť tejto technológii a tešíme sa, ako budú tieto znalosti využívať v budúcnosti.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div>
+<div class="card about">
+        <div class="card-img">
+            <img src="../../../../images/BIR.jpg" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Best in Europe</h3>
+                </div>
+                <div class="card-text short">
+                    <p>V tomto roku naši študenti opäť dosiahli mimoriadne výsledky – získali ocenenia <strong>Best in Europe</strong> na úrovniach <strong>A Level</strong> aj <strong>IGCSE</strong> v predmetoch <strong>Chemistry</strong> a <strong>Biology</strong>. Ide o výnimočný úspech, ktorý potvrdzuje vysokú úroveň vedomostí, odhodlanie a prácu našich študentov, ako aj kvalitu výučby na našej škole.</p> <p>Na tieto skvelé výsledky nadväzuje aj minuloročné ocenenie jednej z našich študentiek, ktorá získala titul <strong>Najlepší v regióne – Európe</strong> v rámci <strong>OxfordAQA Go Further Awards 2024</strong>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Ocenenia Go Further Awards predstavujú prestížny míľnik úspechu a identifikujú študentov, ktorí vo svojom štúdiu vynikli. Tento úspech nie je len dôkazom individuálneho nasadenia študenta, ale aj dôkazom vysokého štandardu výučby a podpory v našej školskej komunite. Srdečne blahoželáme a tešíme sa na ďalšie úspechy v budúcnosti.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div>
+  <div class="card about">
+        <div class="card-img">
+            <img src="../../../../images/japan.jpeg" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Tretiacke potulky po Japonsku</h3>
+                </div>
+                <div class="card-text short">
+                    <p>15 žiakov triedy GYM3B našej strednej školy sa v dňoch od 28. februára do 9. marca 2025 zúčastnilo nezabudnuteľného výletu do Japonska. Počas šiestich nocí v Tokiu a troch v Kjóte mali študenti jedinečnú príležitosť spoznať fascinujúce spojenie moderných technológií a bohatej kultúry tejto ázijskej krajiny.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>V Tokiu navštívili významné miesta ako Kawasaki Robospace, Museum of Emerging Science a Maglev Museum, kde sa oboznámili s najnovšími technologickými inováciami. Kultúrnu časť výletu obohatili návštevy pamiatok ako svätyňa Meiji Jingu, Inari Shrine a viaceré budhistické chrámy. Tento výlet poskytol našim študentom nielen cenné vzdelávacie skúsenosti, ale aj hlbšie pochopenie japonskej kultúry a tradícií, čo im zanechalo nezabudnuteľné spomienky a hodnotné poznatky.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div>
+  <div class="card about">
+        <div class="card-img">
+            <img src="../../../../images/DOD24b.jpg" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Príprava na top univerzity</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Naši absolventi boli úspešne prijatí na štúdium na najlepších univerzitách ako sú: Oxford, Cambridge, Imperial College London, University College London, Kings College London, Columbia University of New York, Georgia Institute of Technology, Santa Clara University California, Northwestern University, McGill University Montreal, Quinnipiac University Connecticut in USA, Edinburgh University, Glasgow University, University of Manchester, The University of Bristol.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Leiden University, Utrecht University, University of Amsterdam, Politechnico Milano, University of Aberdeen, University of Sheffield, Leuven University, Technogische Universitat Munchen, University of Groningen, Delft University of Technology, Medical University Pavia, Trinity College Dublin.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div>
+    <div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/highSchool/modern.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Moderné, akreditované, uznávané</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Moderné, akreditované, anglické vzdelávanie ktorého cieľom je príprava na najlepšie univerzity na svete. Súkromné gymnázium GALILEO SCHOOL je zaradené do siete škôl SR a zároveň medzinárodným akreditovaným vzdelávacím centrom OxfordAQA ako aj PEARSON EDEXCEL, poskytujúcim plnohodnotné vzdelávanie ukončené celosvetovo uznávanými stredoškolskými certifikátmi.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Súkromné gymnázium GALILEO SCHOOL si kladie za cieľ pripraviť svojich absolventov tak, aby pre nich neexistovali žiadne bariéry pre okamžitý a aktívny štart vo vysokoškolskom štúdiu. Neoceniteľnú rolu hrá schopnosť študenta akceptovať učivo na najvyššej úrovni vzdelávania v anglickom jazyku. Toto je možné dosiahnuť len priamo preberaním učiva jednotlivých predmetov strednej školy v tejto cudzej reči.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/highSchool/uni.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Cesta na skvelé univerzity</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Absolventi gymnázia GALILEO SCHOOL pokračujú na svetoznámych univerzitách, počnúc od Oxfordu a Cambridge, cez Santa Clara v americkej Silicon Valley, Kings College v Londýne až po Edinburgh a Glasgow v Škótsku. Naši absolventi sú úspešnými mladými ľuďmi vo svojich odboroch, či už je to zakladateľ a manažér multimilionovej spoločnosti v Londýne, alebo Mladý líder GLOBSEC 2019, členka stálej misie Slovenskej republiky pri OSN, výskumníčka trvalo udržateľnej výroby energie v Afrike, alebo vedec počítačovej bezpečnosti na Oxfordskej univerzite.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Vyučovanie v malých skupinách, moderný prístup k študentovi ako individualite, a formovanie obsahu vydelávania podľa individuálnych potrieb študenta. Každý študent is počas štúdia buduje portfólio vedomostí, zručností a medzinárodných certifikátov podľa vlastných záujmov a smerovania budúcej kariéry. Vyučovanie má v sebe zapracované využitie moderných technológií ako video z výkladu učiva, učebné materiály online, komunikáciu a zadania domácich úloh online prostredníctvom platformy Microsoft Teams a Office 365.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            <img src="https://res.cloudinary.com/galileoschool/image/upload/c_scale,w_1024/galileo_web/aboutus/highSchool/individual.JPG" class="card-img-top" alt="Picture Not Available!">
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Individuálny prístup</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Vzdelanie v anglickom jazyku na vysokej odbornej úrovni je podporené množstvom možností na individuálnu profiláciu študenta. Medzinárodné súťaže, stáže, pobyty na zahraničných školách, spolupráca s odborníkmi z praxe z celého sveta, a podpora individuálneho talentu každého študenta je súčasťou štúdia.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Dlhodobá spolupráca s našimi partnermi Microsoft a Cisco sa ukázala kľúčovou v nedávnom období celosvetovej pandémie. Plnohodnotné vyučovanie na 100% prebiehalo od prvého dňa počas uzavretia školy. Prístup k hodinám, materiálom, zadaniam a komunikácia online bez obmedzení v prostredí Microsft Teams dáva predpoklad k vyššej flexibilite individuálnzch študijných plánov, hybridnému modelu vyučovania a prístupe k vzdelaniu formou online learning.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <!-- Scripts at the end to make sure everything else is already loaded. -->
+    <script src="../../../../js/carousel.js"></script>
+    <script src="../../../../js/about.js"></script>
+</body>
+
+</html>
